@@ -30,26 +30,24 @@ function setLocalStorage(){
    const box = document.getElementById('box')
    const fName = document.getElementById('name')
 
-   localStorage.parse("fName", JSON.stringify(fName))
+   localStorage.setItem("fName", fName.value)
    
-// skapar en btn i html under boxdiv
-   var removeBtn = document.createElement('button')
-   removeBtn.innerText = 'remove'
-   removeBtn.id = 'removeBtn'
-   removeBtn.onclick = clearLocalStorage
-   box.appendChild(removeBtn)
+// // skapar en btn i html under boxdiv
+//    var removeBtn = document.createElement('button')
+//    removeBtn.innerText = 'remove'
+//    removeBtn.id = 'removeBtn'
+//    removeBtn.onclick = clearLocalStorage
+//    box.appendChild(removeBtn)
 }
 
 function getLocalStorage(){
 
-   var x = localStorage.setItem("name")
+   var x = localStorage.getItem("name")
    console.log(x);
 }
 
 // rensar sessionStorage
 function clearLocalStorage(){
+   var clearbtn = document.getElementById('clearbtn')
    localStorage.clear()
-
-   var removeBtn = document.getElementById('removeBtn')
-   removeBtn.style.display = 'none'
 }
